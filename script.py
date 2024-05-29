@@ -20,7 +20,7 @@ def gui():
         label2.config(text=f'x2: {x2}, y2: {y2}')
     
     def select_image():
-        image_path = fd.askopenfilename()
+        image_path = fd.askopenfilename(filetypes=[('Image Files', '*.png *.jpg *.jpeg *.gif *.bmp *.tiff')]) or 'Select Image'
         imageButton.config(text=image_path)
 
     tk.Button(root, text='Get x1, y1', command=get_xy1).pack()
